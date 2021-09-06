@@ -85,7 +85,7 @@ What you should learn from this project:
 ---
 
 ## Author
-* **Joseph Mahiuha** - [julianamonr03](https://github.com/Mahiuha)
+* **Joseph Mahiuha** - [Mahiuha](https://github.com/Mahiuha)
 -----
 
 

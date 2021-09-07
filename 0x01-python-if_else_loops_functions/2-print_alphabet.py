@@ -1,2 +1,3 @@
 #!/usr/bin/python3
-print('"Programming is like building a multilingual puzzle')
+for i in range(97, 123):
+    print("{:c}".format(i), end="")

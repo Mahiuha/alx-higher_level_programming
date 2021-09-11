@@ -84,6 +84,8 @@ What you should learn from this project:
 
 ---
 
+<div align="center">
+
 ## Author
 * **Joseph Mahiuha** - [Mahiuha](https://github.com/Mahiuha)
 -----

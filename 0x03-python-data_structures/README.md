@@ -90,7 +90,7 @@ Since we now know a bit of C, we can look at what is happening under the hood of
 <div align="center">
 
 ## Author
-* **Joseph Mahiuha** - [Mahiuha](https://github.com/Mahuha)
+* **Joseph Mahiuha** - [Mahiuha](https://github.com/Mahiuha)
 
 
 ------

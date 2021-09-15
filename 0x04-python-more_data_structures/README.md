@@ -97,6 +97,8 @@ Python lists:
 
 ---
 
+<div align="center">
+  
 ## Author
 * **Joseph Mahiuha** - [Mahiuha](https://github.com/Mahiuha)
 

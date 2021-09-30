@@ -1,0 +1,178 @@
+The ``101-lazy_matrix_mul`` module
+======================
+
+Using ``lazy_matrix_mul``
+-------------------
+
+Import ``lazy_matrix_mul`` from the ``101-lazy_matrix_mul`` module:
+
+	>>> matrix_mul = lazy_matrix_mul= __import__('101-lazy_matrix_mul').lazy_matrix_mul
+
+Test arguments where list of lists contains only integers:
+
+	>>> print(matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]]))
+	[[ 7 10]
+         [15 22]]
+
+Test arguments where list of lists contains only floats:
+
+	>>> print(matrix_mul([[1.11, 2.75], [3.876, 4.12]], [[1.424, 2.29], [3.3, 4.4]]))
+	[[10.65564  14.6419  ]
+         [19.115424 27.00404 ]]
+
+Test arguments where list of lists contain combinations of integers and floats:
+
+	>>> print(matrix_mul([[1.564, 2], [3.5, 4]], [[1.111, 2.44], [3, 4]]))
+	[[ 7.737604 11.81616 ]
+         [15.8885   24.54    ]]
+
+Test arguments that are not list:
+
+	>>> print(matrix_mul("Not matrix", 5))
+ 	Traceback (most recent call last):
+	ValueError: Scalar operands are not allowed, use '*' instead
+
+Test no arguments:
+
+	>>> print(matrix_mul())
+	Traceback (most recent call last):
+	TypeError: lazy_matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
+
+Test with only one argument:
+
+	>>> print(matrix_mul([[1, 2, 3]]))
+	Traceback (most recent call last):
+	TypeError: lazy_matrix_mul() missing 1 required positional argument: 'm_b'
+
+Test combination of arguments that is a list and not a list:
+
+	>>> print(matrix_mul("Not matrix", [[1, 2]]))
+	Traceback (most recent call last):
+	ValueError: Scalar operands are not allowed, use '*' instead
+
+	>>> print(matrix_mul([[1, 2]], "Not matrix"))
+	Traceback (most recent call last):
+	ValueError: Scalar operands are not allowed, use '*' instead
+
+Test arguments that are empty lists:
+
+	>>> print(matrix_mul([], []))
+	0.0
+
+	>>> print(matrix_mul([[]], [[]]))
+	... #doctest: +ELLIPSIS
+	Traceback (most recent call last):
+	ValueError: ...
+
+Test combination of arguments that is an empty list and non empty list:
+
+	>>> print(matrix_mul([], [[1, 2]]))
+	... # doctest: +ELLIPSIS
+	Traceback (most recent call last):
+	ValueError: ...
+
+	>>> print(matrix_mul([[]], [[1, 2]]))
+	... # doctest: +ELLIPSIS
+	Traceback (most recent call last):
+	ValueError: ...
+
+	>>> print(matrix_mul([[1, 2, 3]], []))
+	... # doctest: +ELLIPSIS
+	Traceback (most recent call last):
+	ValueError: ...
+
+	>>> print(matrix_mul([[1, 2, 3]], [[]]))
+	... # doctest: +ELLIPSIS
+	Traceback (most recent call last):
+	ValueError: ...
+
+Test arguments where elements in a list of lists is neither int nor float:
+
+	>>> print(matrix_mul([[1, "string"], [3, 4]], [[1, "Nope"], [3, 4]]))
+	Traceback (most recent call last):
+	TypeError: invalid data type for einsum
+
+	>>> print(matrix_mul([[1, "string"], [3, 4]], [[1, 2], [3, 4]]))
+	Traceback (most recent call last):
+	TypeError: invalid data type for einsum
+
+	>>> print(matrix_mul([[1, 2], [(1, 3), 4]], [[1, 2], [3, 4]]))
+	Traceback (most recent call last):
+	ValueError: setting an array element with a sequence.
+
+	>>> print(matrix_mul([[1, 2], [3, 4]], [[1, 2], ["string", 4]]))
+	Traceback (most recent call last):
+	TypeError: invalid data type for einsum
+
+	>>> print(matrix_mul([[1, 2], [3, 4]], [[1, (5000, 1000)], [3, 4]]))
+	Traceback (most recent call last):
+	ValueError: setting an array element with a sequence.
+
+Test arguments with varying length of rows in the matrices:
+
+	>>> print(matrix_mul([[1, 2], [3, 4, 1]], [[1, 2, 3], [3, 4]]))
+	Traceback (most recent call last):
+	ValueError: setting an array element with a sequence.
+
+	>>> print(matrix_mul([[1, 2], [3, 4, 1]], [[1, 2], [3, 4]]))
+	Traceback (most recent call last):
+	ValueError: setting an array element with a sequence.
+
+	>>> print(matrix_mul([[1], [3, 4]], [[1, 2, 3], [3, 4]]))
+	Traceback (most recent call last):
+	ValueError: setting an array element with a sequence.
+
+	>>> print(matrix_mul([[1, 2], [3, 4]], [[1, 2], [3]]))
+	Traceback (most recent call last):
+	ValueError: setting an array element with a sequence.
+
+	>>> print(matrix_mul([[1, 2], [3, 4]], [[1, 2, 3], [3, 4]]))
+	Traceback (most recent call last):
+	ValueError: setting an array element with a sequence.
+
+Test order of validation (list > list or list > non empty list or non empty list of lists > only integers or floats > all rows have the same length > len of rows in m_a == len of col in m_b:
+
+	>>> print(matrix_mul([[1, 2], "string"], [[1, 2], [3, 4]]))
+	Traceback (most recent call last):
+	ValueError: setting an array element with a sequence
+
+	>>> print(matrix_mul([], ["string"]))
+	... # doctest: +ELLIPSIS
+	Traceback (most recent call last):
+	ValueError: ...
+
+	>>> print(matrix_mul([[], []], [[1, "string"], [3, 4]]))
+	... # doctest: +ELLIPSIS
+	Traceback (most recent call last):
+	ValueError: ...
+
+	>>> print(matrix_mul([[1, 2], [3, "string"]], [[]]))
+	... # doctest: +ELLIPSIS
+	Traceback (most recent call last):
+	ValueError: ...
+
+	>>> print(matrix_mul([[1, 2], [3, "string", 5]], [[1, 2], [3, 4]]))
+	Traceback (most recent call last):
+	ValueError: setting an array element with a sequence
+
+	>>> print(matrix_mul([[1, 2], [3, 4]], [[1, 2], [(5000, 19999), 4, 10]]))
+	Traceback (most recent call last):
+	ValueError: setting an array element with a sequence.
+
+	>>> print(matrix_mul([[1, 2, 10], [3, 4, 0, 10]], [[1, 2], [3, 4]]))
+	Traceback (most recent call last):
+	ValueError: setting an array element with a sequence.
+
+	>>> print(matrix_mul([[1, 2, 10], [3, 4, 0]], [[1, 2], [3, 4, 30]]))
+	Traceback (most recent call last):
+	ValueError: setting an array element with a sequence.
+
+	>>> print(matrix_mul([[1, 2, 3], [3, 4, 5]], [[1, 2], [3, 4]]))
+	... # doctest: +ELLIPSIS
+	Traceback (most recent call last):
+	ValueError: ...
+
+	>>> print(matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4], [5, 6]]))
+	... # doctest: +ELLIPSIS
+	Traceback (most recent call last):
+	ValueError: ...

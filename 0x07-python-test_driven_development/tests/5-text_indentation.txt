@@ -1,0 +1,69 @@
+The ``5-text_indentation`` module
+======================
+
+Using ``text_indentation``
+-------------------
+
+Import ``text_indentation`` from the ``5-text_indentation`` module:
+
+	>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Test argument as string:
+
+	>>> text_indentation("Lorem ipsum dolor sit amet, consectetur adipiscing elit. beatiorem! Iam ruinas videres")
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+	<BLANKLINE>
+	beatiorem! Iam ruinas videres
+
+Test argument as empty string:
+
+	>>> text_indentation("")
+
+Test argument as non string:
+
+	>>> text_indentation(5)
+	Traceback (most recent call last):
+	TypeError: text must be a string
+
+Test argument with multuple leading spaces:
+
+	>>> text_indentation("     Lorem ipsum dolor sit amet, consectetur adipiscing elit. beatiorem! Iam ruinas videres")
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+	<BLANKLINE>
+	beatiorem! Iam ruinas videres
+
+Test argument with multuple spaces at the beginning and/or end of text:
+
+	>>> text_indentation("Lorem ipsum dolor sit amet, consectetur adipiscing elit. beatiorem! Iam ruinas videres     ")
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+	<BLANKLINE>
+	beatiorem! Iam ruinas videres
+
+Test argument with multuple spaces at the beginning, middle, and/or end of text:
+
+	>>> text_indentation("     Lorem ipsum dolor   sit amet, consectetur adipiscing elit.      beatiorem! Iam ruinas videres     ")
+	Lorem ipsum dolor   sit amet, consectetur adipiscing elit.
+	<BLANKLINE>
+	beatiorem! Iam ruinas videres
+
+Test argument with multuple '?', '.', or ':' within the text:
+
+	>>> text_indentation(".?:.Lorem ipsum dolor sit amet, consectetur adipiscing elit.? beatiorem! Iam ruinas videres?.:")
+	.
+	<BLANKLINE>
+	?
+	<BLANKLINE>
+	:
+	<BLANKLINE>
+	.
+	<BLANKLINE>
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+	<BLANKLINE>
+	?
+	<BLANKLINE>
+	beatiorem! Iam ruinas videres?
+	<BLANKLINE>
+	.
+	<BLANKLINE>
+	:
+	<BLANKLINE>

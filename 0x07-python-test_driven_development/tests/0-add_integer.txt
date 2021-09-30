@@ -1,0 +1,109 @@
+The ``0-add_integer`` module
+======================
+
+Using ``add_integer``
+-------------------
+
+Import ``add_integer`` from the 0-add_integer`` module:
+
+    >>> add_integer = __import__('0-add_integer').add_integer
+
+Test with no arguments:
+
+   >>> add_integer()
+   Traceback (most recent call last):
+   TypeError: add_integer() missing 1 required positional argument: 'a'
+
+Test with only one argument:
+
+   >>> add_integer(1)
+   99
+
+Test both arguments as integers:
+
+   >>> add_integer(3, 2)
+   5
+
+Test combination of integer and floats:
+
+   >>> add_integer(1.5, 3)
+   4
+
+   >>> add_integer(5, 0.0)
+   5
+
+Test both arguments as floats:
+
+   >>> add_integer(1.8, 2.3)
+   3
+
+Test with float overflow:
+
+   >>> add_integer(float('inf'), float('inf'))
+   ... # doctest: +ELLIPSIS
+   Traceback (most recent call last):
+   OverflowError: ...
+
+   >>> add_integer(-float('inf'), -float('inf'))
+   ... # doctest: +ELLIPSIS
+   Traceback (most recent call last):
+   OverflowError: ...
+
+Test with float NaN:
+
+   >>> add_integer(float('nan'), 3.1)
+   Traceback (most recent call last):
+   ValueError: cannot convert float NaN to integer
+
+Test both arguments as neither floats nor integers:
+
+   >>> add_integer("This", (1)) #doctest: +ELLIPSIS
+   Traceback (most recent call last):
+   TypeError:...
+
+Test combination of arguments with one being an integer and the other being
+neither float nor integer:
+
+   >>> add_integer(4, "Not") #doctest: +ELLIPSIS
+   Traceback (most recent call last):
+   TypeError:...
+
+   >>> add_integer((1, 4), 5) #doctest: +ELLIPSIS
+   Traceback (most recent call last):
+   TypeError:...
+
+Test combination of arguments with one being a float and the other being
+neither float nor integer:
+
+   >>> add_integer(4.6, "Not") #doctest: +ELLIPSIS
+   Traceback (most recent call last):
+   TypeError:...
+
+   >>> add_integer((1, 4), 5.3) #doctest: +ELLIPSIS
+   Traceback (most recent call last):
+   TypeError:...
+
+Test both arguments as negative integers:
+
+   >>> add_integer(-5, -3)
+   -8
+
+Test both arguments as negative floats:
+
+   >>> add_integer(-3.1, -2.9)
+   -5
+
+Test arguments with one as negative float and the other as negative integer:
+
+   >>> add_integer(-7.1, -3)
+   -10
+
+Test argument with one as positive and the other as negative:
+
+   >>> add_integer(10, -5.2)
+   5
+
+Test argument with both being zeroes:
+
+   >>> add_integer(0, 0.0)
+   0

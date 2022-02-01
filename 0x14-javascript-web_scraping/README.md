@@ -130,8 +130,6 @@ Nien Nunb
 Bib Fortuna
 0x14-javascript-web_scraping:$ 
 ```
-0x14-javascript-web_scraping:$ 
-```
 ### Author
 - [Joseph Mahiuha](https://github.com/Mahiuha)
 ### Acknowledgments

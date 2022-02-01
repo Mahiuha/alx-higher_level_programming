@@ -130,51 +130,6 @@ Nien Nunb
 Bib Fortuna
 0x14-javascript-web_scraping:$ 
 ```
-[102-search_twitter.js](102-search_twitter.js)
-```
-0x14-javascript-web_scraping:$ ./102-search_twitter.js AAAAAA BBBBBB "#cisfun"
-[857232487553974300] Im not sure if uber will be around in the next couple of years
-https://t.co/ZLIvgZoC5I
-
-@holbertonschool
-#cisfun by MJohnson
-[856621409438543900] https://t.co/kXRUi7BSId
-
-@holbertonschool
-#cisfun by MJohnson
-[856588726884982800] Itching to read my python book...instead picked up a mystery novel.
-#HappyBreak! #cisfun too by Biebop
-[855696357788614700] Twitter Likes and followers hack 
-#Humedal
-#Mondorf
-#cisfun https://t.co/I1tc1iR5g2 by Mustafa ugurlu
-[855594028397584400] @julienbarbier42 #neverforget
-
-@sophie_rb42
-@holbertonschool 
-#cisfun
-#lol https://t.co/WSiZFW8bgg by MJohnson
-[855473339757998100] Lessons learnt at #DockerCon - containers rock, #pythoniscool, and because #Cisfun, I was able to have more meaningful convos w/ tech peeps by Zee Adams
-[855202379183960000] https://t.co/VeGXxjptRD
-
-@ALX 
-#cisfun by MJohnson
-[855136931973283800] @Linux source code: about 6,000,000 lines of code❤👯#mindblown #cisfun @holberton https://t.co/0x64hr3iAd by Naomi
-[854919921200840700] RT @NamoDawn: Shoutout to the @holbertonschool community for dropping knowledge during Shell Project 👩🏻‍💻✨💪🏻#cisfun #manpagesfordays by Holberton
-[854919717768888300] Shoutout to the @holbertonschool community for dropping knowledge during Shell Project 👩🏻‍💻✨💪🏻#cisfun #manpagesfordays by Naomi
-[854880017754406900] @yeoleumson helping me stay focused on the last day of the C shell project @holbertonschool #cisfun
-https://t.co/jnIqSF8azO by Christian Agha
-[854815181611745300] https://t.co/gSz4NCNlmJ
-
-@ALX
-#cisfun by MJohnson
-[854787744135954400] RT @c_nov20: Burning the midnight oil yet again...Shell Project due in just under 24 hours
-
-#Cisfun by jv
-[854775517320433700] Last day of shell project... Yay... I get to get some sleep now!!! #sleepdeprived #sleepingisoverrated #cisfun https://t.co/LaG7OiFvDL by Julija Lee
-[854580988155838500] Burning the midnight oil yet again...Shell Project due in just under 24 hours
-
-#Cisfun by c_nov20
 0x14-javascript-web_scraping:$ 
 ```
 ### Author

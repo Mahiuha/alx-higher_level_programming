@@ -24,7 +24,6 @@ Each directory contains the High level projects and code that I've written durin
 | [0x0D. SQL Introduction ](./0x0D-SQL_introduction) | Using Docker to maintain and debug Apache servers |
 | [0x0E. SQL More Queries ](./0x0E-SQL_more_queries) | Debugging NGINX servers with faulty ports |
 | [0x0F. Python Object Relational Mapping ](./0x0F-python-object_relational_mapping) | Load balancing on HAProxy servers |
-| [W3C Validator](./W3C-Validator) | ARP spoofing and sniffing unencrypted traffic, dictionary attack |
 | [0x10. Python Network #0 ](./0x10-python-network_0) | Configuring HTTPS with Let's Encrypt and certbot |
 | [0x11. Python Network #1 ](./0x11-python-network_1) | A blog and diagram about how the internet works |
 | [0x12. Javascript Warm up ](./0x12-javascript-warm_up) | Debugging and running software as another user |
